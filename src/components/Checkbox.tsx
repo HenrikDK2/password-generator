@@ -41,15 +41,20 @@ const CheckboxIndicator = styled("span", {
 interface CheckboxProps {
   children?: React.ReactNode;
   required?: boolean;
-  onClick: React.MouseEventHandler<HTMLDivElement>;
+  onClick: () => void;
   checked: boolean;
   label: string;
 }
 
 export const Checkbox: React.FC<CheckboxProps> = ({ checked, label, onClick, required }) => (
   <CustomCheckbox
+    onKeyDown={(e) => {
+      if (!required) {
+        if (e.code === "Space" || e.code === "Enter") onClick();
+      }
+    }}
     aria-required={required}
-    onClick={(e) => !required && onClick(e)}
+    onClick={(e) => !required && onClick()}
     role="checkbox"
     aria-checked={checked}
     tabIndex={0}
