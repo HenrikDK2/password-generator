@@ -19,7 +19,7 @@ const PasswordContainer = styled("div", {
 const Password = styled("div", {
   userSelect: "none",
   fontSize: "4vw",
-  "@media(min-width: 500px)": {
+  "@desktop": {
     fontSize: "1.25rem",
   },
 });

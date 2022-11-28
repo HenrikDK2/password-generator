@@ -3,19 +3,24 @@ import { PasswordGenerator } from "./components/PasswordGenerator";
 import { styled, globalStyles } from "./stiches";
 
 const Main = styled("main", {
-  position: "absolute",
-  left: "50%",
-  top: "50%",
-  maxWidth: "500px",
   width: "100%",
-  transform: "translate(-50%, -50%)",
+  "@desktop": {
+    position: "absolute",
+    left: "50%",
+    top: "50%",
+    maxWidth: "500px",
+    transform: "translate(-50%, -50%)",
+  },
 });
 
 const Heading = styled("h1", {
   fontSize: "1.25rem",
   color: "$white-1",
   textAlign: "center",
-  marginBottom: "1rem",
+  margin: "4rem 0 1rem",
+  "@desktop": {
+    margin: "0 0 1rem",
+  },
 });
 
 interface AppProps {

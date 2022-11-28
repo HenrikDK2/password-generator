@@ -11,6 +11,9 @@ export const { styled } = createStitches({
       "grey-2": "#7b7a87",
     },
   },
+  media: {
+    desktop: "(min-width: 500px)",
+  },
 });
 
 export const globalStyles = globalCss({
